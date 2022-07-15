@@ -16,5 +16,5 @@ export default class ProductModel extends Model {
   @Column({ allowNull: false })
   createdAt: Date;
   @Column({ allowNull: false })
-  updatedA: Date;
+  updatedAt: Date;
 }
