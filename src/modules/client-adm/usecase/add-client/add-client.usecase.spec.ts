@@ -13,9 +13,16 @@ describe("AddClientUsecase test", () => {
     const usecase = new AddClientUseCase(repository);
 
     const input = {
+      id: "1",
       name: "Client 1",
-      email: "client1@email.com",
-      address: "address 1",
+      email: "x@x.com",
+      document: "123456789",
+      street: "Address 1",
+      number: "1",
+      complement: "Complement 1",
+      city: "City 1",
+      state: "State 1",
+      zipCode: "ZipCode 1",
     };
 
     const result = await usecase.execute(input);
@@ -24,6 +31,12 @@ describe("AddClientUsecase test", () => {
     expect(result.id).toBeDefined();
     expect(result.name).toEqual(input.name);
     expect(result.email).toEqual(input.email);
-    expect(result.address).toEqual(input.address);
+    expect(result.document).toBe(input.document);
+    expect(result.street).toBe(input.street);
+    expect(result.number).toBe(input.number);
+    expect(result.complement).toBe(input.complement);
+    expect(result.city).toBe(input.city);
+    expect(result.state).toBe(input.state);
+    expect(result.zipCode).toBe(input.zipCode);
   });
 });

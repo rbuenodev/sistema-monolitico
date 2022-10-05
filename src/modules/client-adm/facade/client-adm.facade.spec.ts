@@ -36,7 +36,13 @@ describe("ClientAdmFacade Test", () => {
       id: "1",
       name: "Client 1",
       email: "client1@email.com",
-      address: "address 1",
+      document: "123456789",
+      street: "Address 1",
+      number: "1",
+      complement: "Complement 1",
+      city: "City 1",
+      state: "State 1",
+      zipCode: "ZipCode 1",
     };
 
     await facade.add(input);
@@ -45,7 +51,13 @@ describe("ClientAdmFacade Test", () => {
     expect(client.id).toBe(input.id);
     expect(client.name).toEqual(input.name);
     expect(client.email).toEqual(input.email);
-    expect(client.address).toEqual(input.address);
+    expect(client.document).toBe(input.document);
+    expect(client.street).toBe(input.street);
+    expect(client.number).toBe(input.number);
+    expect(client.complement).toBe(input.complement);
+    expect(client.city).toBe(input.city);
+    expect(client.state).toBe(input.state);
+    expect(client.zipCode).toBe(input.zipCode);
   });
 
   it("Should find a client", async () => {
@@ -54,8 +66,14 @@ describe("ClientAdmFacade Test", () => {
     const input = {
       id: "1",
       name: "Client 1",
-      email: "client1@email.com",
-      address: "address 1",
+      email: "x@x.com",
+      document: "123456789",
+      street: "Address 1",
+      number: "1",
+      complement: "Complement 1",
+      city: "City 1",
+      state: "State 1",
+      zipCode: "ZipCode 1",
     };
 
     await facade.add(input);
@@ -64,6 +82,12 @@ describe("ClientAdmFacade Test", () => {
     expect(client.id).toBe(input.id);
     expect(client.name).toEqual(input.name);
     expect(client.email).toEqual(input.email);
-    expect(client.address).toEqual(input.address);
+    expect(client.document).toBe(input.document);
+    expect(client.street).toBe(input.street);
+    expect(client.number).toBe(input.number);
+    expect(client.complement).toBe(input.complement);
+    expect(client.city).toBe(input.city);
+    expect(client.state).toBe(input.state);
+    expect(client.zipCode).toBe(input.zipCode);
   });
 });
